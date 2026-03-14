@@ -4,7 +4,7 @@ function App() {
   return (
     <>
       <Appshell />
-      <h1>Hello</h1>
+      <h1>Weather App</h1>
     </>
   )
 }
