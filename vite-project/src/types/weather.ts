@@ -1,9 +1,7 @@
-export type weatherData = {
+export type GeoCodingResult = {
   city: string
-  country: string
-  temperature: number
-  feelsLike: number
-  humidity: number
-  windspeed: number
-  icon: string
+}
+
+export type LocationResults = {
+  lat: number
 }
