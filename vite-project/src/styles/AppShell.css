@@ -3,18 +3,19 @@ body {
 }
 
 .appshell {
-  background-color: white;
   font-family: sans-serif;
   display: flex;
   justify-content: center;
   margin: 15px;
   margin-top: 150px;
+  overflow: hidden;
 }
 
 .appshell-container {
+  background-color: white;
   margin: 10px;
   text-align: center;
-  height: 400px;
+  height: auto;
   width: 350px;
   align-items: center;
   border: transparent;
