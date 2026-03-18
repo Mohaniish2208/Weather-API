@@ -1,22 +1,30 @@
-import "../../../styles/WeatherCard.css";
+import "../../../styles/WeatherCard.css"
 
-export default function WeatherCard() {
+type WeatherCardProps = {
+  cityName: string
+  temperature: number
+  condition: string
+  humidity: number
+  windSpeed: number
+}
+
+export default function WeatherCard({ cityName, temperature, condition, humidity, windSpeed }: WeatherCardProps) {
   return (
     <section className="weathercard">
-      <h2 className="weathercard-city">Toronto</h2>
-      <p className="weathercard-temperature">12°C</p>
-      <p className="weathercard-condition">Partly Cloudy</p>
+      <h2 className="weathercard-city">{cityName}</h2>
+      <p className="weathercard-temperature">{temperature}</p>
+      <p className="weathercard-condition">{condition}</p>
       <div className="weathercard-details">
         <div className="weathercard-detail">
           <h3>Humidity</h3>
-          <strong>68%</strong>
+          <strong>{humidity}%</strong>
         </div>
 
         <div className="weathercard-detail">
           <h3>Wind</h3>
-          <strong>14km/h</strong>
+          <strong>{windSpeed}km/h</strong>
         </div>
       </div>
     </section>
-  );
+  )
 }

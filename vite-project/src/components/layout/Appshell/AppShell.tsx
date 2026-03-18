@@ -3,9 +3,10 @@ import StatusMessage from "../../weather/StatusMessage/StatusMessage"
 import WeatherCard from "../../weather/WeatherCard/WeatherCard"
 import "../../../styles/AppShell.css"
 import { useState } from "react"
+import { fetchCoordinates, fetchWeather } from "../../../services/weatherApi"
 
 type WeatherState = {
-  cityNAme: string
+  cityName: string
   temperature: number
   humidity: number
   windSpeed: number
@@ -18,6 +19,41 @@ export default function Appshell() {
   const [weather, setWeather] = useState<WeatherState | null>(null)
   const [loading, setLoading] = useState(false)
 
+  async function handleSearch() {
+    if (!city.trim()) {
+      setStatusMessage("Enter a city name.")
+      setWeather(null)
+      return
+    }
+
+    try {
+      setLoading(true)
+      setStatusMessage("loading...")
+      setWeather(null)
+
+      const location = await fetchCoordinates(city)
+
+      const weatherData = await fetchWeather(location.latitude, location.longitude)
+
+      setWeather({
+        cityName: `${location.name}${location.country ? `, ${location.country}` : ""}`,
+        temperature: Math.round(weatherData.current.temperature_2m),
+        humidity: weatherData.current.relative_humidity_2m,
+        windSpeed: Math.round(weatherData.current.wind_speed_10m),
+        condition: "Live weather",
+      })
+      setStatusMessage("")
+    } catch (error) {
+      if (error instanceof Error) {
+        setStatusMessage(error.message)
+      } else {
+        setStatusMessage("Something went wrong.")
+      }
+    } finally {
+      setLoading(false)
+    }
+  }
+
   return (
     <main className="appshell">
       <div className="appshell-container">
@@ -26,9 +62,17 @@ export default function Appshell() {
           <p>Search any city to view weather details.</p>
         </header>
 
-        <SearchForm />
-        <StatusMessage message="Search for a city to begin." />
-        <WeatherCard />
+        <SearchForm city={city} onCityChange={setCity} onSearch={handleSearch} />
+        {statusMessage && <StatusMessage message={statusMessage} />}
+        {weather && !loading && (
+          <WeatherCard
+            cityName={weather.cityName}
+            temperature={weather.temperature}
+            condition={weather.condition}
+            humidity={weather.humidity}
+            windSpeed={weather.windSpeed}
+          />
+        )}
       </div>
     </main>
   )
