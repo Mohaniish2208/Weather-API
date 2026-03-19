@@ -4,6 +4,7 @@ import WeatherCard from "../../weather/WeatherCard/WeatherCard"
 import "../../../styles/AppShell.css"
 import { useState } from "react"
 import { fetchCoordinates, fetchWeather } from "../../../services/weatherApi"
+import getWeatherCondition from "../../../hooks/weatherCode"
 
 type WeatherState = {
   cityName: string
@@ -40,7 +41,7 @@ export default function Appshell() {
         temperature: Math.round(weatherData.current.temperature_2m),
         humidity: weatherData.current.relative_humidity_2m,
         windSpeed: Math.round(weatherData.current.wind_speed_10m),
-        condition: "Live weather",
+        condition: getWeatherCondition(weatherData.current.weather_code),
       })
       setStatusMessage("")
     } catch (error) {
