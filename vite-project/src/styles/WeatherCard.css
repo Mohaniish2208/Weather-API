@@ -1,6 +1,6 @@
 .weathercard {
   padding: 5px;
-  border-radius: 5px;
+  border-radius: 10px;
   box-shadow: 0 5px 5px 5px rgba(214, 214, 214, 0.655);
   margin: 10px 5px;
 }
@@ -13,34 +13,59 @@
   margin: 5px;
 }
 
-.weathercard-city,
-.weathercard-temperature,
+.weathercard-detail img {
+  border: inset 1px 1px 3px rgba(255, 255, 255, 0.5);
+  margin: 5px 5px 5px;
+  height: 40px;
+  width: 40px;
+}
+
 .weathercard-condition {
   color: black;
 }
 
 .weathercard-city {
+  color: #94a3b8;
   font-size: 20px;
-  margin: 0 0 8px;
+  margin: 10px 10px 8px;
 }
 
 .weathercard-temperature {
-  margin: 0 0 10px;
+  color: #94a3b8;
+  margin: 10px 10px 10px;
   font-weight: 700;
   line-height: 1;
   font-size: 30px;
 }
 
 .weathercard-condition {
-  margin: 0 10px;
+  display: inline-flex;
+  align-items: center;
+  background: linear-gradient(135deg, rgb(52, 52, 52), goldenrod);
+  color: #e7e17b;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  width: 50%;
+  border-radius: 18px;
+  background-color: goldenrod;
+  padding: 8px;
+  margin: 0 10px 10px;
+  gap: 10px;
+  font-weight: 600;
+  box-shadow: inset 1px 1px 3px rgba(255, 255, 255, 0.597);
+}
+
+.weathercard-condition img {
+  width: 30px;
+  height: 30px;
 }
 
 .weathercard-detail {
+  display: flex;
   min-width: 140px;
+  background-color: #112648;
   padding: 0;
   border: 1px solid rgb(206, 203, 203);
   border-radius: 10px;
-  background-color: rgb(235, 237, 239);
 }
 
 .weathercard-detail h3 {
@@ -49,12 +74,18 @@
   margin: 5px;
 }
 
-.weathercard-detail strong {
-  display: block;
-  width: 100%;
+.text {
+  color: azure;
+  padding: 0px;
   margin: 0;
+}
+
+.weathercard-detail strong {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 15px;
   padding: 3px 0;
-  background-color: white;
   text-align: center;
-  border-radius: 0 0 10px 10px;
+  font-weight: 700;
+  font-size: 20px;
 }

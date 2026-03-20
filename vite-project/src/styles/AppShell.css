@@ -1,5 +1,5 @@
 body {
-  background-color: rgb(211, 218, 218);
+  background-color: #0f172a;
 }
 
 .appshell {
@@ -12,11 +12,10 @@ body {
 }
 
 .appshell-container {
-  background-color: white;
+  background-color: #112648;
   margin: 10px;
-  text-align: center;
   height: auto;
-  width: 350px;
+  width: auto;
   align-items: center;
   border: transparent;
   border-radius: 15px;
@@ -25,6 +24,7 @@ body {
 }
 
 .appshell-container h1 {
+  color: #f8fafc;
   font-size: 17px;
 }
 
@@ -32,4 +32,8 @@ body {
   font-size: 15px;
   margin-top: 0;
   color: rgb(74, 74, 74);
+}
+
+.appshell-container-header {
+  text-align: center;
 }

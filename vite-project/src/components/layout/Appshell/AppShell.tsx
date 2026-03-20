@@ -12,6 +12,7 @@ type WeatherState = {
   humidity: number
   windSpeed: number
   condition: string
+  feelsLike: number
 }
 
 export default function Appshell() {
@@ -42,6 +43,7 @@ export default function Appshell() {
         humidity: weatherData.current.relative_humidity_2m,
         windSpeed: Math.round(weatherData.current.wind_speed_10m),
         condition: getWeatherCondition(weatherData.current.weather_code),
+        feelsLike: Math.round(weatherData.current.apparent_temperature),
       })
       setStatusMessage("")
     } catch (error) {
@@ -59,7 +61,9 @@ export default function Appshell() {
     <main className="appshell">
       <div className="appshell-container">
         <header className="appshell-container-header">
-          <h1>Weather API Dashboard</h1>
+          <h1>
+            <span>Weather API </span>Dashboard
+          </h1>
           <p>Search any city to view weather details.</p>
         </header>
 
@@ -72,6 +76,7 @@ export default function Appshell() {
             condition={weather.condition}
             humidity={weather.humidity}
             windSpeed={weather.windSpeed}
+            feelsLike={weather.feelsLike}
           />
         )}
       </div>
