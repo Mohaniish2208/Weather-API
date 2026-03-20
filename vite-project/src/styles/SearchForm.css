@@ -3,6 +3,9 @@
   justify-content: center;
   gap: 5px;
   margin: 10px 10px 5px;
+  padding: 3px 3px 3px;
+  border-radius: 7px;
+  box-shadow: 0 0 15px 5px rgba(13, 32, 73, 0.56);
 }
 
 .form-input {
@@ -13,11 +16,12 @@
 }
 
 .form-btn {
-  font-size: 10px;
+  font-size: 13px;
+  font-weight: 700;
   border-radius: 7px;
   padding: 2px 15px;
   color: white;
-  background-color: rgb(42, 108, 249);
+  background: linear-gradient(135deg, #2a6cf9, #4192df);
   cursor: pointer;
   border: transparent;
 }

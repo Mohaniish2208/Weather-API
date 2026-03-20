@@ -33,7 +33,7 @@ export default function WeatherCard({
         <span>{condition}</span>
       </div>
       <div className="weathercard-details">
-        <div className="weathercard-detail">
+        <div className="weathercard-detail accent-blue">
           <div className="humidity-icon">
             <img src="/icons/humidity.png" alt="humidity" />
           </div>
@@ -43,7 +43,7 @@ export default function WeatherCard({
           </div>
         </div>
 
-        <div className="weathercard-detail">
+        <div className="weathercard-detail accent-cyan">
           <div className="wind-icon">
             <img src="/icons/wind.png" alt="wind" />
           </div>
@@ -53,7 +53,7 @@ export default function WeatherCard({
           </div>
         </div>
 
-        <div className="weathercard-detail">
+        <div className="weathercard-detail accent-gold">
           <div className="feelsLike-icon">
             <img src="/icons/feelsLike.png" alt="feelsLike" />
           </div>
