@@ -15,6 +15,7 @@ export type CurrentWeather = {
   time: number
   interval: number
   temperature_2m: number
+  temperature_2m_min: number
   relative_humidity_2m: number
   apparent_temperature: number
   weather_code: number

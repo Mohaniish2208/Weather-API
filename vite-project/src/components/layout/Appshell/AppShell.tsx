@@ -80,8 +80,8 @@ export default function Appshell() {
             condition={weather.condition}
             humidity={weather.humidity}
             windSpeed={weather.windSpeed}
-            feelsLike={weather.weatherCode}
-            weatherCode={weather.weatherCode}
+            feelsLike={weather.feelsLike}
+            weatherCode={weather.feelsLike}
           />
         )}
       </div>

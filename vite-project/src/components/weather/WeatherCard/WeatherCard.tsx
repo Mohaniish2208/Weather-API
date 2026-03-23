@@ -11,10 +11,6 @@ type WeatherCardProps = {
   weatherCode: number
 }
 
-// export default function handleCloudy(weatherCode(getWeatherCondition.c)){
-//   if (condition === )
-// }
-
 export default function WeatherCard({
   cityName,
   temperature,
