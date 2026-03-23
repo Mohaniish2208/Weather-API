@@ -14,6 +14,10 @@ export default function getWeatherCondition(weatherCode: number) {
       return "Haze"
     case 17:
       return "Thunderstorm"
+    case 20:
+      return "Drizzle"
+    case 21:
+      return "Rain"
     case 22:
       return "Snow"
     case 23:
