@@ -103,11 +103,11 @@ src/
 
 ## Links:
 
-[!StackBlitz]()
-[!CodeSandBox]()
-[!GitHub]()
+- [Vercel](https://vercel.com/mohaniish-projects/weather-dashboard-react-ts)
+- [StackBlitz](https://stackblitz.com/~/github.com/Mohaniish2208/weather-dashboard-react-ts)
+- [CodeSandBox](https://codesandbox.io/p/github/Mohaniish2208/weather-dashboard-react-ts/draft/wonderful-sky?workspaceId=ws_QuyUBcubhh91f2xBfZ1hab)
 
 ## Author
 
-Mohaniish
+Mohanish Ingole
 Frontend Developer
